@@ -16,6 +16,7 @@ const Auth = () => {
 	}
 	
 	const onSubmit = (event) => {
+		// Form Submit의 새로 고침 방지
 		event.preventDefault();
 	}
 	
@@ -24,7 +25,7 @@ const Auth = () => {
 			<form onSubmit={onSubmit}>
 				<input 
 					name="email" 
-					type="text" 
+					type="email" 
 					plcaeholder="Email" 
 					required value={email} 
 					onChange={onChange}
