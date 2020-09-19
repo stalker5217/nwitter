@@ -51,7 +51,7 @@ const Auth = () => {
 				<input 
 					name="email" 
 					type="email" 
-					plcaeholder="Email" 
+					placeholder="Email" 
 					required value={email} 
 					onChange={onChange}
 				/>
