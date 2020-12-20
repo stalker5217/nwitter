@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {useHistory} from "react-router-dom";
 
-import { authService, dbService } from "fbase";
+import { authService } from "fbase";
 
 
 export default ({ refreshUser, userObj }) => {
@@ -20,7 +20,7 @@ export default ({ refreshUser, userObj }) => {
 		setNewDisplayName(value);
 	};
 
-	const obSubmit = async (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
 		if(userObj.displayName !== newDisplayName) {
 			await userObj.updateProfile({
@@ -32,12 +32,28 @@ export default ({ refreshUser, userObj }) => {
 	};
 
 	return (
-		<>
-			<form onSubmit={obSubmit}>
-				<input onChange={onChange} type="text" placeholder="Display Name" />
-				<input type="submit" value="Update Profile" />
-			</form>
-			<button onClick={onLogOutClick}>Log Out</button>
-		</>
+		<div className="container">
+		<form onSubmit={onSubmit} className="profileForm">
+		  <input
+			onChange={onChange}
+			type="text"
+			autoFocus
+			placeholder="Display name"
+			value={newDisplayName}
+			className="formInput"
+		  />
+		  <input
+			type="submit"
+			value="Update Profile"
+			className="formBtn"
+			style={{
+			  marginTop: 10,
+			}}
+		  />
+		</form>
+		<span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+		  Log Out
+		</span>
+	  </div>
 	)
 }

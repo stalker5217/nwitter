@@ -30,18 +30,20 @@ function App() {
       uid: user.uid,
       updateProfile: (args) => user.updateProfile(args),
     });
-  }
+    console.log(user.uid);
+  };
   
   return(
     <>
-      {init ? 
+      {init ? (
         <AppRouter 
           isLoggedIn={Boolean(userObj)}
-          userObj={userObj} 
+          userObj={userObj}
           refreshUser={refreshUser}
         />
-            : "Initializing..."}
-      <footer>&copy; {new Date().getFullYear()} NWitter </footer>
+        ) : (
+          "Initializing..."
+        )}
     </>
   );
 }
