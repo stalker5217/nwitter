@@ -10,10 +10,10 @@ Firebase + React로 구현한 트위터 클론 코딩입니다.
 
 |제품|기능|
 |:--|:--|
-|Authentication|기본 인증 + OAuth2|
+|Authentication|OAuth2 + 인증 관리|
 |Cloud Firestore|NoSQL Database, 포스트 CRUD|
 |Storage|File Storage, 사진 업로드용|
-|Hosting|기본 호스팅|
+|Hosting|애플리케이션 호스팅|
 
 <br/>
 
