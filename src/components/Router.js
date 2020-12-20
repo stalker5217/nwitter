@@ -43,7 +43,7 @@ const AppRouter = ({refreshUser, isLoggedIn, userObj}) => {
 				</>
 				
 				)
-			};
+			}
 			</>
 		</Switch>
 	</Router>)
